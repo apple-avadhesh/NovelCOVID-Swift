@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  NovelCOVID
 //
-//  Created by work on 05/04/20.
+//  Created by Avadhesh on 05/04/20.
 //  Copyright © 2020 Avadhesh. All rights reserved.
 //
 

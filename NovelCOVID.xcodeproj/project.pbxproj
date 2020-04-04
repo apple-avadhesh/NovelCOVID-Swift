@@ -13,6 +13,10 @@
 		96F826792439511700F1AD35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96F826782439511700F1AD35 /* Assets.xcassets */; };
 		96F8267C2439511700F1AD35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96F8267B2439511700F1AD35 /* Preview Assets.xcassets */; };
 		96F8267F2439511700F1AD35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F8267D2439511700F1AD35 /* LaunchScreen.storyboard */; };
+		96F82688243951C400F1AD35 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F82687243951C400F1AD35 /* NetworkManager.swift */; };
+		96F8268A243952D300F1AD35 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F82689243952D300F1AD35 /* APIEndpoints.swift */; };
+		96F8268D2439541200F1AD35 /* AllCasesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F8268C2439541200F1AD35 /* AllCasesModel.swift */; };
+		96F8268F243954D500F1AD35 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F8268E243954D500F1AD35 /* CountryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		96F8267B2439511700F1AD35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		96F8267E2439511700F1AD35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96F826802439511700F1AD35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96F82687243951C400F1AD35 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		96F82689243952D300F1AD35 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		96F8268C2439541200F1AD35 /* AllCasesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCasesModel.swift; sourceTree = "<group>"; };
+		96F8268E243954D500F1AD35 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				96F826722439511500F1AD35 /* AppDelegate.swift */,
+				96F8268B2439536B00F1AD35 /* Models */,
+				96F82686243951B300F1AD35 /* Networking */,
 				96F826742439511500F1AD35 /* SceneDelegate.swift */,
 				96F826762439511500F1AD35 /* ContentView.swift */,
 				96F826782439511700F1AD35 /* Assets.xcassets */,
@@ -73,6 +83,24 @@
 				96F8267B2439511700F1AD35 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		96F82686243951B300F1AD35 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				96F82687243951C400F1AD35 /* NetworkManager.swift */,
+				96F82689243952D300F1AD35 /* APIEndpoints.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		96F8268B2439536B00F1AD35 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96F8268C2439541200F1AD35 /* AllCasesModel.swift */,
+				96F8268E243954D500F1AD35 /* CountryModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F8268A243952D300F1AD35 /* APIEndpoints.swift in Sources */,
 				96F826732439511500F1AD35 /* AppDelegate.swift in Sources */,
+				96F8268F243954D500F1AD35 /* CountryModel.swift in Sources */,
+				96F82688243951C400F1AD35 /* NetworkManager.swift in Sources */,
+				96F8268D2439541200F1AD35 /* AllCasesModel.swift in Sources */,
 				96F826752439511500F1AD35 /* SceneDelegate.swift in Sources */,
 				96F826772439511500F1AD35 /* ContentView.swift in Sources */,
 			);
