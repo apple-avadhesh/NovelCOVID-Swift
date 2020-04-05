@@ -22,16 +22,24 @@ private struct TabItem: View {
 }
 
 struct ContentView: View {
-       
+    
     var body: some View {
-           TabView {
-              StatsView()
+        
+        TabView {
+            StatsView()
                 .tabItem {
-                    TabItem(imageName: "chart.bar", text: "World Stats")
-                   Text("World Stats")
-                 }
-           }
-       }
+                    TabItem(imageName: "chart.pie", text: "World Stats")
+                    Text("World Stats")
+            }
+            
+            CountriesView()
+                .tabItem {
+                    TabItem(imageName: "globe", text: "Countries")
+                    Text("Countries")
+            }
+        }.environment(\.colorScheme, .dark)
+        
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
