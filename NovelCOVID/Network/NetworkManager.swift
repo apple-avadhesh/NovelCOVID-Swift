@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-struct NetAvadheshManager {
+struct NetworkManager {
     let session = URLSession.shared
     
     struct Response<T> {
@@ -21,6 +21,7 @@ struct NetAvadheshManager {
         return URLSession.shared
             .dataTaskPublisher(for: request)
             .tryMap { result -> Response<T> in
+                print(T.self)
                 let value = try decoder.decode(T.self, from: result.data)
                 return Response(value: value, response: result.response)
             }
@@ -28,6 +29,3 @@ struct NetAvadheshManager {
             .eraseToAnyPublisher()
     }
 }
-
-
-

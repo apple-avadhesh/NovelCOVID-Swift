@@ -12,26 +12,27 @@ struct CountriesView: View {
     
     @State private var searchText : String = ""
     
-    let array = ["Peter", "Paul", "Mary", "Anna-Lena", "George", "John", "Greg", "Thomas", "Robert", "Bernie", "Mike", "Benno", "Hugo", "Miles", "Michael", "Mikel", "Tim", "Tom", "Lottie", "Lorrie", "Barbara"]
+    @ObservedObject var viewModel: CountriesViewModel
 
-    
     var body: some View {
         
         NavigationView {
             VStack {
-                
-                // Search view
+                //MARK: Search View
                 SearchBar(searchText: $searchText)
                 
-                List {
-                    // Filtered list of names
-                    ForEach(array.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {
-                        searchText in Text(searchText)
-                    }
-                }
-                .navigationBarTitle(Text("Countries"))
+                //MARK: List View
+                List(viewModel.countries,id: \.country) { country in
+                              NavigationLink(destination: CountryCell(country: country)) {
+                                  CountryCell(country: country)
+                              }
+                          }
+                .navigationBarTitle(Text("Search"))
                 .resignKeyboardOnDragGesture()
             }
+        }.onAppear {
+            //MARK: Service Call
+            self.viewModel.getCountriesData()
         }
     }
 }

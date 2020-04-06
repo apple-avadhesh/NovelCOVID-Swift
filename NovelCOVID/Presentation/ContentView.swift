@@ -23,6 +23,14 @@ private struct TabItem: View {
 
 struct ContentView: View {
     
+    
+    var countryViewModel: CountriesViewModel
+    
+    init() {
+        countryViewModel = CountriesViewModel()
+    }
+    
+    
     var body: some View {
         
         TabView {
@@ -32,7 +40,7 @@ struct ContentView: View {
                     Text("World Stats")
             }
             
-            CountriesView()
+            CountriesView(viewModel: countryViewModel)
                 .tabItem {
                     TabItem(imageName: "globe", text: "Countries")
                     Text("Countries")

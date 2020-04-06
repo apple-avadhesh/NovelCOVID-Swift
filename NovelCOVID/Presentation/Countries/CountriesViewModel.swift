@@ -6,4 +6,34 @@
 //  Copyright © 2020 Avadhesh. All rights reserved.
 //
 
+import SwiftUI
+import Combine
 import Foundation
+
+final class CountriesViewModel: ObservableObject {
+    
+    var didChange = PassthroughSubject<CountriesViewModel, Never>()
+    
+    @Published var errorMessage = ""
+    @Published var isErrorShown = false
+    
+    var cancellable : AnyCancellable?
+
+    @Published var countries: [CountryModel] = [CountryModel]() {
+        didSet { didChange.send(self) }
+    }
+    
+    func getCountriesData() {
+        cancellable = NovelCOVIDAPI.allCountries().sink(receiveCompletion: { (completion) in
+            switch completion {
+                
+            case .finished:
+                print("finished")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }) { (countries) in
+            self.countries = countries
+        }
+    }
+}
