@@ -13,7 +13,7 @@ struct CountriesView: View {
     @State private var searchText : String = ""
     
     @ObservedObject var viewModel: CountriesViewModel
-
+    
     var body: some View {
         
         NavigationView {
@@ -23,24 +23,21 @@ struct CountriesView: View {
                 
                 //MARK: List View
                 List(viewModel.countries,id: \.country) { country in
-                              NavigationLink(destination: CountryCell(country: country)) {
-                                  CountryCell(country: country)
-                              }
-                          }
-                .navigationBarTitle(Text("Search"))
+                    
+                    ZStack {
+                        CountryCell(country: country)
+                        NavigationLink(destination: CountryCell(country: country)) {
+                            EmptyView()
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                }
+                .navigationBarTitle(Text("Search by Country"))
                 .resignKeyboardOnDragGesture()
             }
         }.onAppear {
             //MARK: Service Call
             self.viewModel.getCountriesData()
         }
-    }
-}
-
-
-struct CountriesView_Previews: PreviewProvider {
-    static var previews: some View {
-        StatsView()
-            .environment(\.colorScheme, .dark)
     }
 }
