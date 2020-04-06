@@ -1,7 +1,7 @@
 # NovelCOVID-Swift
 
 
-<img src="https://github.com/apple-avadhesh/NovelCOVID-Swift/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-04-06%20at%2013.40.23.png" width="139" height="300">            <img src="https://github.com/apple-avadhesh/NovelCOVID-Swift/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-04-06%20at%2021.16.58.png" width="139" height="300">
+<img src="https://github.com/apple-avadhesh/NovelCOVID-Swift/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-04-06%20at%2013.40.23.png" width="222" height="480">            <img src="https://github.com/apple-avadhesh/NovelCOVID-Swift/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-04-06%20at%2021.16.58.png" width="222" height="480">
 
 # NovelCOVID-Swift iOS App with SwiftUI, Combine (MVVM)
 
