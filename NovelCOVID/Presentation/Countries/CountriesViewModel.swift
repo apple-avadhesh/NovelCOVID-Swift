@@ -33,7 +33,7 @@ final class CountriesViewModel: ObservableObject {
                 print(error.localizedDescription)
             }
         }) { (countries) in
-            self.countries = countries
+            self.countries = countries.sorted(by: {$0.cases! > $1.cases!})
         }
     }
 }

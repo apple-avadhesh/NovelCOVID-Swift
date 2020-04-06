@@ -22,7 +22,9 @@ struct CountriesView: View {
                 SearchBar(searchText: $searchText)
                 
                 //MARK: List View
-                List(viewModel.countries,id: \.country) { country in
+                List(viewModel.countries.filter {
+                    self.searchText.isEmpty ? true : $0.country!.localizedStandardContains(self.searchText)
+                },id: \.country) { country in
                     
                     ZStack {
                         CountryCell(country: country)
