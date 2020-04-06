@@ -14,9 +14,6 @@ final class CountriesViewModel: ObservableObject {
     
     var didChange = PassthroughSubject<CountriesViewModel, Never>()
     
-    @Published var errorMessage = ""
-    @Published var isErrorShown = false
-    
     var cancellable : AnyCancellable?
 
     @Published var countries: [CountryModel] = [CountryModel]() {

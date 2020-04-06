@@ -25,9 +25,11 @@ struct ContentView: View {
     
     
     var countryViewModel: CountriesViewModel
+    var mapViewModel: MapViewModel
     
     init() {
         countryViewModel = CountriesViewModel()
+        mapViewModel = MapViewModel()
     }
     
     
@@ -45,6 +47,12 @@ struct ContentView: View {
                     TabItem(imageName: "globe", text: "Countries")
                     Text("Countries")
             }
+            
+            MapView(viewModel: mapViewModel)
+                          .tabItem {
+                              TabItem(imageName: "map", text: "Map")
+                              Text("World Stats")
+                      }
         }.environment(\.colorScheme, .dark)
         
     }

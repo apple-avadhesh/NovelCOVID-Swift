@@ -29,6 +29,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+        
+        UITableView.appearance().separatorColor = .clear
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
