@@ -6,6 +6,7 @@
 - Statistics of world total cases, recovered, deaths and today's case.
 - Map with annotatios and callout view of affected country with details.
 - Public API used for data(https://corona.lmao.ninja)
+- SF Symbols used for Icons
 
 ## Work in progress
 - Dashboard for linechart
