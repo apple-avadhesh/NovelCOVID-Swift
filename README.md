@@ -1,6 +1,7 @@
 # NovelCOVID-Swift
 
-
+![Map](https://github.com/apple-avadhesh/NovelCOVID-Swift/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-04-06%20at%2013.40.23.png)
+![Country List](https://github.com/apple-avadhesh/NovelCOVID-Swift/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-04-06%20at%2021.16.58.png)
 
 # NovelCOVID-Swift iOS App with SwiftUI, Combine (MVVM)
 
