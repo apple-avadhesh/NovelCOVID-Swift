@@ -26,7 +26,7 @@ final class MapViewModel: ObservableObject {
     var cancellable : AnyCancellable?
 
     func getMapData() {
-        cancellable = NovelCOVIDAPI.allCountries().sink(receiveCompletion: { (completion) in
+        cancellable = NovelCOVIDAPI.getAllCountries().sink(receiveCompletion: { (completion) in
             switch completion {
                 
             case .finished:

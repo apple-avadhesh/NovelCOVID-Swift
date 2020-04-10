@@ -21,7 +21,7 @@ final class CountriesViewModel: ObservableObject {
     }
     
     func getCountriesData() {
-        cancellable = NovelCOVIDAPI.allCountries().sink(receiveCompletion: { (completion) in
+        cancellable = NovelCOVIDAPI.getAllCountries().sink(receiveCompletion: { (completion) in
             switch completion {
                 
             case .finished:

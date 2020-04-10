@@ -7,41 +7,60 @@
 //
 
 import SwiftUI
+import Charts
+import Combine
+
+class TabManager: ObservableObject {
+    @Published var index = 0 {
+        didSet {
+            publisher.send(index)
+        }
+    }
+    let publisher = PassthroughSubject<Int, Never>()
+}
 
 struct StatsView: View {
     
-    @State private var tabPicker: String = "Total"
+    @ObservedObject var viewModel: StatsViewModel
+    
+    static let pickerItems = StatsTabType.allCases.map{$0.rawValue}
+    @ObservedObject private var tabManager = TabManager()
     
     var body: some View {
         
         NavigationView {
-            ZStack {
-                VStack {
-                    Text("Cases")
+            VStack {
+                VStack(alignment: .leading) {
+                    Text("World Stats")
                         .foregroundColor(.white)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding()
                     
-                    Picker("", selection: $tabPicker) {
-                        Text("Total").tag("Total")
-                        Text("Today's").tag("Today's")
+                    Picker(selection: $tabManager.index, label: Text("")) {
+                    ForEach(0 ..< StatsView.pickerItems.count) {index in
+                        Text(StatsView.pickerItems[index]).tag(index)
+                        }
                     }
+                        
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
+                .onReceive(tabManager.publisher) { index in
+                    self.viewModel.getDailyData(tabType: index)
+                }
+                }
+                
+                VStack {
+                    GraphViewWrapper(dataEntries: viewModel.pointEntries)
                 }
             }
+                
             .navigationBarTitle(Text("Novel Coronavirus"))
             .navigationBarHidden(false)
             .environment(\.colorScheme, .dark)
+        }.onAppear {
+            self.viewModel.getDailyData(tabType: 0)
         }
     }
 }
 
-
-struct StatsView_Previews: PreviewProvider {
-    static var previews: some View {
-        StatsView()
-            .environment(\.colorScheme, .dark)
-    }
-}

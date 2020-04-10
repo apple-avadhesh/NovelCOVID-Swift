@@ -23,20 +23,22 @@ private struct TabItem: View {
 
 struct ContentView: View {
     
-    
     var countryViewModel: CountriesViewModel
     var mapViewModel: MapViewModel
+    var statsViewModel: StatsViewModel
+
     
     init() {
         countryViewModel = CountriesViewModel()
         mapViewModel = MapViewModel()
+        statsViewModel = StatsViewModel()
+
     }
-    
     
     var body: some View {
         
         TabView {
-            StatsView()
+            StatsView(viewModel: statsViewModel)
                 .tabItem {
                     TabItem(imageName: "chart.pie", text: "World Stats")
                     Text("World Stats")
