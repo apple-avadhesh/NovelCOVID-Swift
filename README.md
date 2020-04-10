@@ -8,8 +8,8 @@
 - Public API used for data(https://corona.lmao.ninja)
 - SF Symbols used for Icons
 
-## Work in progress
-- Dashboard for linechart
+## Third Party Libraries
+ - [LineChart](https://github.com/nhatminh12369/LineChart)
 
 ## Requirements
 - Xocde 11.4
