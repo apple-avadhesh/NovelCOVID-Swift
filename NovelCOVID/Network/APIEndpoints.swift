@@ -24,7 +24,7 @@ extension NovelCOVIDAPI {
         urlComponents.queryItems = [
           URLQueryItem(name: "sort", value: "country")
         ]
-        return execute(URLRequest(url: urlComponents.url!.appendingPathComponent("countries")))
+        return execute(URLRequest(url: urlComponents.url!.appendingPathComponent("v2/countries")))
     }
     
     static func getDailyStats() -> AnyPublisher<DailyStatsModel, Error> {

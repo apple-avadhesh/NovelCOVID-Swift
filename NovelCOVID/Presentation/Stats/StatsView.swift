@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Charts
 import Combine
 
 class TabManager: ObservableObject {
